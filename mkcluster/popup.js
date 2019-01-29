@@ -12,12 +12,11 @@ window.addEventListener('DOMContentLoaded', function(){
 });
 
 function setDOMInfo(info){
-  pr = document.getElementById('insert_here');
   console.log(info);
   var sentences=[];
   for(let i=0;i<info.length;i++)
   {
-    pr.innerText+="pr id:"+info[i].id+" pr text: "+info[i].text+"\n";
+    
     sentences = sentences.concat(info[i].text);
   }
   topicise(sentences);
@@ -87,6 +86,17 @@ function topicise(sentences) {
       topicText[k] += ( topicTerm +" ");
     }
     //console.log(sentences.join("\n"));
-    console.log(topicText);
+    
+
+  }
+  console.log(topicText);
+  pr = document.getElementById('insert_here');
+  // pr.innerText+="pr id:"+info[i].id+" pr text: "+info[i].text+"\n";
+
+  for(var i=0;i<topicText.length;i++)
+  {
+    pr.innerText+="Cluster "+i+":\n";
+    pr.innerText+=topicText[i].split(" ").slice(0,4);
+    pr.innerText+="\n";
   }
 }
