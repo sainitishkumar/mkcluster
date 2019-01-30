@@ -25,7 +25,7 @@ function setDOMInfo(info){
 var main_url;
 var sentences;
 
-/*******************/
+/********* clustering into four chunks **********/
 
 function topicise(sentences) {
   //console.log("analysing "+sentences.length+" sentences...");
@@ -57,7 +57,7 @@ function topicise(sentences) {
     
   var V = vocab.length;
   var M = documents.length;
-  var K = 4;
+  var K = 5;         // number of clusters in pull requests
   var alpha = 0.1;  // per-document distributions over topics
   var beta = .01;  // per-topic distributions over words
   lda.configure(documents,V,10000, 2000, 100, 10);
@@ -93,10 +93,27 @@ function topicise(sentences) {
   pr = document.getElementById('insert_here');
   // pr.innerText+="pr id:"+info[i].id+" pr text: "+info[i].text+"\n";
 
-  for(var i=0;i<topicText.length;i++)
+
+  classes = [];
+
+  for(var i=0;i<K;i++)
   {
-    pr.innerText+="Cluster "+i+":\n";
-    pr.innerText+=topicText[i].split(" ").slice(0,4);
-    pr.innerText+="\n";
+    class0 = document.createElement('p');
+    class0.setAttribute("class","class"+i);
+    class0.setAttribute("style","border-style:inset;");
+    // class0.style.border-style="inset";
+    classes = classes.concat(class0);
   }
+  for(var i=0;i<K;i++)
+  {
+    classes[i].innerText+="Cluster "+i+":\n";
+    classes[i].innerText+=topicText[i].split(" ").slice(0,4);
+    classes[i].innerText+="\n";
+  }
+
+  for(var i=0;i<K;i++)
+  {
+    pr.appendChild(classes[i]);
+  }
+
 }
