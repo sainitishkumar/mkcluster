@@ -1,9 +1,0 @@
-WSR #5
-
-This week's progress:
-	1. Migration from JS(LDA) to Python(Cosine Similarity).
-	2. Used cosine similarity(one of many metrics) to get the similarity matrix between the pull requests code-diffs.
-
-Next week plans:
-	1. Explore ways for custom metrics to cluster PR's.
-	2. Develop tool for Hackathon.
