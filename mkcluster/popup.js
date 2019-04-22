@@ -25,7 +25,7 @@ function setDOMInfo(info){
 var main_url;
 var sentences;
 
-/********* clustering into four chunks **********/
+/********* clustering into K number of chunks **********/
 
 function topicise(sentences) {
   //console.log("analysing "+sentences.length+" sentences...");
@@ -104,6 +104,7 @@ function topicise(sentences) {
     // class0.style.border-style="inset";
     classes = classes.concat(class0);
   }
+
   for(var i=0;i<K;i++)
   {
     classes[i].innerText+="Cluster "+i+":\n";

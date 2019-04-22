@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "mkcluster",
   "description": "This extension uses Github pull requests and clusters them using LDA algorithm",
-  "version": "1",
+  "version": "2",
   "author": "saiNitish",
   "browser_action": {
     "default_title": "MkCluster",
