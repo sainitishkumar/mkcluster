@@ -4,6 +4,4 @@ Usage:
 	- bs4
 	- sklearn
 	- pandas
-3. run using:
-	python3 PR_similarity.py
-4. Similarity matrix is displayed.
+3. run using the ipython notebook by adding your url.
